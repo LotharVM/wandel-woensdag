@@ -1,15 +1,47 @@
+import { queryAllLocations } from "@/api/queryAllLocations";
 import { css } from "styled-system/css";
-import { Box, Flex } from "styled-system/jsx";
+import { Grid } from "@/components/Grid";
+import { MotionWrapper } from "@/components/MotionWrapper";
 
-export default function Home() {
+export default async function Home() {
+  const locations = await queryAllLocations();
+
   return (
-    <Flex justify={"center"} align={"center"} direction={"column"} h={"100dvh"}>
-      <div className={css({ fontSize: "6xl", fontWeight: "bold" })}>
-        Hello with css() 🐼!
+    <div>
+      <div className={css({ display: "flex", position: "relative" })}>
+        <div className={css({ width: "40vw" })}>
+          <Grid items={locations} />
+        </div>
+        <div
+          className={css({
+            position: "sticky",
+            top: "16px",
+            display: "flex",
+            flex: 1,
+            height: "calc(100dvh - 32px)",
+            justifyContent: "center",
+          })}
+        >
+          <MotionWrapper>
+            <h1
+              className={css({
+                h: "100%",
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "space-between",
+                fontSize: "128px",
+                w: "100%",
+                textAlign: "center",
+                textTransform: "uppercase",
+                lineHeight: 1,
+              })}
+            >
+              Wandel
+              <span>Woensdag</span>
+            </h1>
+          </MotionWrapper>
+        </div>
       </div>
-      <Box fontSize={"6xl"} fontWeight={"bold"} color="secondary">
-        Hello with props 🐼!
-      </Box>
-    </Flex>
+    </div>
   );
 }

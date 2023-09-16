@@ -15,8 +15,7 @@ export default defineConfig({
     extend: {
       tokens: {
         colors: {
-          primary: { value: "#0FEE0F" },
-          secondary: { value: "#EE0F0F" },
+          primary: { value: "#0063C8" },
         },
         fonts: {
           body: { value: "system-ui, sans-serif" },
@@ -24,8 +23,14 @@ export default defineConfig({
       },
     },
   },
+  globalCss: {
+    body: {
+      fontFamily: "body",
+      color: "black",
+      bg: "primary",
+    },
+  },
 
-  // The output directory for your css system
   outdir: "styled-system",
-  jsxFramework: "react",
+  jsxStyleProps: "minimal",
 });
