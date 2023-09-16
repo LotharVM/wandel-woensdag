@@ -18,9 +18,14 @@ export default async function PageLocationDetail({ params }: PageProps) {
   return (
     <div
       className={css({
+        pos: "fixed",
+        top: 4,
+        bottom: 4,
+        left: 0,
+        right: 4,
         display: "flex",
         justifyContent: "space-between",
-        maxH: "calc(100dvh - 32px)",
+        maxH: "100dvh",
         overflow: "hidden",
       })}
     >
@@ -31,12 +36,19 @@ export default async function PageLocationDetail({ params }: PageProps) {
       >
         <MotionWrapper>
           <h1
-            className={css({ fontSize: "120px", textTransform: "uppercase" })}
+            className={css({
+              fontSize: "120px",
+              textTransform: "uppercase",
+              lineHeight: 1,
+              px: 4,
+            })}
           >
             {data.title}
           </h1>
         </MotionWrapper>
-        <Link href="/">TERUG</Link>
+        <Link href="/" className={css({ px: 4 })}>
+          TERUG
+        </Link>
       </div>
       <div
         className={css({

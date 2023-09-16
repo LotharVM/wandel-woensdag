@@ -7,9 +7,19 @@ export default async function Home() {
   const locations = await queryAllLocations();
 
   return (
-    <div>
+    <div
+      className={css({
+        pos: "fixed",
+        top: 0,
+        bottom: 0,
+        left: 0,
+        width: "100%",
+        maxH: "100dvh",
+        overflow: "auto",
+      })}
+    >
       <div className={css({ display: "flex", position: "relative" })}>
-        <div className={css({ width: "40vw" })}>
+        <div className={css({ width: "40vw", p: 4 })}>
           <Grid items={locations} />
         </div>
         <div
@@ -36,7 +46,7 @@ export default async function Home() {
                 lineHeight: 1,
               })}
             >
-              Wandel
+              wandel
               <span>Woensdag</span>
             </h1>
           </MotionWrapper>

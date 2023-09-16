@@ -19,7 +19,7 @@ export default async function RootLayout({
         <meta name="robots" content="noindex, nofollow" />
       </head>
       <body className={inter.className}>
-        <div className={css({ m: 4 })}>
+        <div>
           <Animate>{children}</Animate>
         </div>
       </body>
