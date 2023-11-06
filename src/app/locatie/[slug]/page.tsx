@@ -1,9 +1,9 @@
-import { queryLocation } from "@/api/queryLocation";
-import { Animate } from "@/components/Animate";
-import { MotionImage } from "@/components/MotionImage";
-import { MotionWrapper } from "@/components/MotionWrapper";
-import Link from "next/link";
-import { css } from "styled-system/css";
+import { queryLocation } from '@/api/queryLocation';
+import { Animate } from '@/components/Animate';
+import { MotionImage } from '@/components/MotionImage';
+import { MotionWrapper } from '@/components/MotionWrapper';
+import Link from 'next/link';
+import { css } from 'styled-system/css';
 
 type PageProps = {
   params: {
@@ -16,45 +16,16 @@ export default async function PageLocationDetail({ params }: PageProps) {
   const data = await queryLocation({ slug });
 
   return (
-    <div
-      className={css({
-        pos: "fixed",
-        top: 4,
-        bottom: 4,
-        left: 0,
-        right: 4,
-        display: "flex",
-        justifyContent: "space-between",
-        maxH: "100dvh",
-        overflow: "hidden",
-      })}
-    >
-      <div
-        className={css({
-          w: "50%",
-        })}
-      >
+    <div className="fixed bottom-4 left-0 right-4 top-4 flex max-h-[100dvh] justify-between overflow-hidden">
+      <div className="w-[50%]">
         <MotionWrapper>
-          <h1
-            className={css({
-              fontSize: "120px",
-              textTransform: "uppercase",
-              lineHeight: 1,
-              px: 4,
-            })}
-          >
-            {data.title}
-          </h1>
+          <h1 className="px-4 text-[120px] uppercase">{data.title}</h1>
         </MotionWrapper>
-        <Link href="/" className={css({ px: 4 })}>
+        <Link href="/" className="px-4">
           TERUG
         </Link>
       </div>
-      <div
-        className={css({
-          flex: 1,
-        })}
-      >
+      <div className="flex-1">
         <MotionImage asset={data.image.asset} isActive />
       </div>
     </div>

@@ -3,7 +3,6 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import React, { FC } from "react";
-import { css } from "styled-system/css";
 import { GridItemProps } from "./GridItem";
 import { ANIMATION_DEFAULT } from "@/constants/animations";
 
@@ -26,20 +25,11 @@ export const MotionImage: FC<MotionImageProps> = ({ asset, isActive }) => {
       exit="initial"
       initial="initial"
       animate="animate"
-      className={css({
-        aspectRatio: "3/4",
-        h: "100%",
-        width: "100%",
-      })}
+      className="aspect-[3/4] h-full w-full"
     >
-      <div className={css({ maxH: "calc(100vh - 32px)" })}>
+      <div className="max-h=[calc(100vh-32px)]">
         <Image
-          className={css({
-            aspectRatio: "3/4",
-            objectFit: "cover",
-            height: "100%",
-            width: "100%",
-          })}
+          className="aspect-[3/4] h-full w-full object-cover"
           width={"600"}
           height={"800"}
           src={asset.url}

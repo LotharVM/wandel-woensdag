@@ -1,1 +1,44 @@
-@layer reset, base, tokens, recipes, utilities;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --vh-dynamic: 1vh;
+    --vh100-dynamic: calc(var(--vh-dynamic) * 100);
+
+    @supports (height: 100dvh) {
+      --vh-dynamic: 1dvh;
+    }
+  }
+}
+
+@layer components {
+  .rich-text {
+    '* + *' {
+      @apply mt-4;
+    }
+
+    h2,
+    h3,
+    h4 {
+      @apply text-xl;
+    }
+
+    a {
+      @apply underline underline-offset-[0.5] hover:opacity-90;
+    }
+  }
+
+  .hide-scrollbar {
+    msoverflowstyle: 'none';
+    overflow: '-moz-scrollbars-none';
+    scrollbarwidth: 'none';
+    &::-webkit-scrollbar {
+      display: 'none';
+    }
+    &:-webkit-scrollbar {
+      display: 'none';
+    }
+  }
+}
