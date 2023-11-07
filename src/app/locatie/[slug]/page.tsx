@@ -4,7 +4,6 @@ import { MotionImage } from '@/components/MotionImage';
 import { MotionWrapper } from '@/components/MotionWrapper';
 import { StickyWrapper } from '@/components/StickyWrapper';
 import Link from 'next/link';
-import { css } from 'styled-system/css';
 
 type PageProps = {
   params: {

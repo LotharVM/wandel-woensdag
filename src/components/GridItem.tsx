@@ -1,7 +1,7 @@
 'use client';
 
 import React, { FC, useState } from 'react';
-import { css } from 'styled-system/css';
+
 import { MotionImage } from './MotionImage';
 import Link from 'next/link';
 import { Animate } from './Animate';

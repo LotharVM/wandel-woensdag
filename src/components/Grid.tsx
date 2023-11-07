@@ -1,6 +1,5 @@
 import React, { FC } from 'react';
 import { GridItem, GridItemProps } from './GridItem';
-import { css } from 'styled-system/css';
 
 interface GridProps {
   items: GridItemProps[];
