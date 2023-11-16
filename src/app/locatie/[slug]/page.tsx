@@ -16,11 +16,11 @@ export default async function PageLocationDetail({ params }: PageProps) {
   const data = await queryLocation({ slug });
 
   return (
-    <div className="min-h-[200dvh]">
+    <div className="min-h-[300dvh]">
       <StickyWrapper className="relative mr-4 flex items-start justify-between pt-4">
-        <div className="w-[50%]">
+        <div className="w-[55%]">
           <MotionWrapper>
-            <h1 className="px-4 text-[120px] uppercase">{data.title}</h1>
+            <h1 className="px-4 text-[120px] uppercase leading-none">{data.title}</h1>
           </MotionWrapper>
           <Link href="/" className="px-4">
             TERUG

@@ -5,13 +5,15 @@ import Image from 'next/image';
 import React, { FC } from 'react';
 import { GridItemProps } from './GridItem';
 import { ANIMATION_DEFAULT } from '@/constants/animations';
+import { clsx } from 'clsx';
 
 interface MotionImageProps {
   asset: GridItemProps['image']['asset'];
   isActive: boolean;
+  className?: string;
 }
 
-export const MotionImage: FC<MotionImageProps> = ({ asset, isActive }) => {
+export const MotionImage: FC<MotionImageProps> = ({ asset, isActive, className }) => {
   const variants = {
     initial: { opacity: 0, scale: 0.9 },
     animate: { opacity: 1, scale: 1 },
@@ -25,11 +27,11 @@ export const MotionImage: FC<MotionImageProps> = ({ asset, isActive }) => {
       exit="initial"
       initial="initial"
       animate="animate"
-      className="aspect-[3/4] h-full w-full"
+      className={clsx('aspect-[3/4] h-full w-full', className)}
     >
       <div className="max-h-[calc(100vh-32px)] overflow-hidden">
         <Image
-          className="aspect-[3/4] h-full w-full object-cover"
+          className={clsx('aspect-[3/4] h-full w-full object-cover', className)}
           width={'600'}
           height={'800'}
           src={asset.url}

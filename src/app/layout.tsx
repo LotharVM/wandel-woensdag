@@ -13,6 +13,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
       <body className={`bg-primary text-black ${inter.className}`}>
         <div>
           <Animate>{children}</Animate>
+          {/* {children} */}
         </div>
       </body>
     </html>

@@ -11,6 +11,11 @@
       --vh-dynamic: 1dvh;
     }
   }
+
+  html,
+  body {
+    overscroll-behavior-y: none;
+  }
 }
 
 @layer components {
@@ -40,5 +45,12 @@
     &:-webkit-scrollbar {
       display: 'none';
     }
+  }
+
+  .text-pretty {
+    text-wrap: pretty;
+  }
+  .text-balance {
+    text-wrap: balance;
   }
 }
