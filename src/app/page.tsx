@@ -1,8 +1,8 @@
 import { queryAllLocations } from '@/api/queryAllLocations';
 import { Grid } from '@/components/Grid';
 import { MotionWrapper } from '@/components/MotionWrapper';
-import WWLogo from '../../public/ww-logo.png';
-import Image from 'next/image';
+import Link from 'next/link';
+import { ActiveMapLocationOrLogo } from '@/components/ActiveMapLocationOrLogo';
 
 export default async function Home() {
   const locations = await queryAllLocations();
@@ -10,7 +10,7 @@ export default async function Home() {
   return (
     <div className="w-full">
       <div className="relative flex">
-        <div className="w-[40%] p-4">
+        <div className="w-[40vw] p-4">
           <Grid items={locations} />
         </div>
         <div className="sticky top-4 flex h-[calc(100dvh-32px)] flex-1 justify-center pr-4">
@@ -25,11 +25,18 @@ export default async function Home() {
                   Een vijfkoppig wandelcollectief van kritische & rechtvaardige wandelaars, gedreven
                   door een onstilbare hunkering naar een straffe bak koffie in amsterdam
                 </p>
-                <Image
-                  className="absolute left-1/2 top-1/2 h-1/3 -translate-x-1/2 -translate-y-1/2 object-contain brightness-50"
-                  src={WWLogo}
-                  alt="Wandel Woensdag"
-                />
+                <p className="text-md text-balance absolute bottom-36 w-full max-w-xl text-center uppercase leading-tight">
+                  Lees ons manifest
+                </p>
+                <ActiveMapLocationOrLogo />
+              </div>
+              <div className="text-md absolute left-0 right-0 top-0 flex h-full w-full items-center p-4 uppercase">
+                <div className="flex w-full justify-between">
+                  <div>
+                    <Link href={'/'}>Lijst</Link> / <Link href={'/map'}>Map</Link>
+                  </div>
+                  <div>( {locations.length} ) koffiezaken</div>
+                </div>
               </div>
             </div>
           </MotionWrapper>

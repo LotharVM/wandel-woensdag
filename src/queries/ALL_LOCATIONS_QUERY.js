@@ -1,4 +1,4 @@
-import { gql } from "graphql-request";
+import { gql } from 'graphql-request';
 
 export const ALL_LOCATIONS_QUERY = gql`
   query allLocations {
@@ -10,6 +10,10 @@ export const ALL_LOCATIONS_QUERY = gql`
         }
         title
         intro
+        googleMaps {
+          lat
+          lng
+        }
         image {
           ... on Image {
             asset {
