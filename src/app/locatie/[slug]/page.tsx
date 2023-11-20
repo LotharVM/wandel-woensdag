@@ -20,11 +20,12 @@ export default async function PageLocationDetail({ params }: PageProps) {
       <StickyWrapper className="relative mr-4 flex items-start justify-between pt-4">
         <div className="w-[55%]">
           <MotionWrapper>
-            <h1 className="px-4 text-[120px] uppercase leading-none">{data.title}</h1>
+            <div className="px-4 ">
+              <h1 className="text-[120px] uppercase leading-none">{data.title}</h1>
+              <Link href="/">TERUG</Link>
+              <p className="text-md mt-12 whitespace-pre">{data.intro}</p>
+            </div>
           </MotionWrapper>
-          <Link href="/" className="px-4">
-            TERUG
-          </Link>
         </div>
         <div className="flex-1">
           <MotionImage asset={data.image.asset} isActive />
