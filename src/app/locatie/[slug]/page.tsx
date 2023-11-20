@@ -34,3 +34,7 @@ export default async function PageLocationDetail({ params }: PageProps) {
     </div>
   );
 }
+
+export async function generateStaticParams() {
+  return [];
+}

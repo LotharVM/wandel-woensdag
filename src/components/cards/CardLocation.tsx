@@ -14,6 +14,7 @@ export interface CardLocationProps {
 
 export const CardLocation: FC<CardLocationProps> = ({ location, className }) => {
   const { title, image, slug } = location;
+
   return (
     <div className="relative mb-4">
       <Link href={`/locatie/${slug.current}`} scroll={false}>

@@ -45,3 +45,7 @@ export default async function Home() {
     </div>
   );
 }
+
+export async function generateStaticParams() {
+  return [];
+}
