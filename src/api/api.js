@@ -1,7 +1,7 @@
-import { GraphQLClient } from "graphql-request";
+import { GraphQLClient } from 'graphql-request';
 
 const client = new GraphQLClient(process.env.NEXT_PUBLIC_API_URL, {
-  next: { revalidation: 10 },
+  next: { revalidate: 10 },
   fetch,
 });
 
