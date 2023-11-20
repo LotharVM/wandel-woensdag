@@ -23,7 +23,7 @@ export default async function PageLocationDetail({ params }: PageProps) {
             <div className="px-4 ">
               <h1 className="text-[120px] uppercase leading-none">{data.title}</h1>
               <Link href="/">TERUG</Link>
-              <p className="text-md mt-12 whitespace-pre">{data.intro}</p>
+              <p className="text-md mt-12 whitespace-pre-wrap">{data.intro}</p>
             </div>
           </MotionWrapper>
         </div>
