@@ -22,8 +22,8 @@ export default async function Home() {
                   <span className="absolute bottom-0 left-[50%] -translate-x-1/2">Woensdag</span>
                 </h1>
                 <p className="text-md text-balance max-w-xl uppercase leading-tight">
-                  Een vijfkoppig wandelcollectief van kritische & rechtvaardige wandelaars, gedreven
-                  door een onstilbare hunkering naar een straffe bak koffie in amsterdam
+                  Vijf kritische, doch rechtvaardige wandelaars met een onstilbare dorst naar een
+                  straffe bak koffie in amsterdam
                 </p>
                 <p className="text-md text-balance absolute bottom-36 w-full max-w-xl text-center uppercase leading-tight">
                   Lees ons manifest
