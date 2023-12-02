@@ -13,9 +13,8 @@ interface LayoutProps {
   parallel: ReactNode;
 }
 
-export default async function RootLayout(props: LayoutProps) {
+export default async function RootLayout({ children, parallel }: LayoutProps) {
   const locations = await queryAllLocations();
-  console.log(props);
 
   return (
     <html lang="nl">
@@ -25,8 +24,8 @@ export default async function RootLayout(props: LayoutProps) {
       <body className={`bg-primary text-black ${inter.className}`}>
         <MotionHome>
           <Homepage locations={locations} />
-          {props.parallel}
-          {props.children}
+          {parallel}
+          {children}
         </MotionHome>
       </body>
     </html>
