@@ -23,7 +23,7 @@ export function Animate({ children }: PropsWithChildren) {
 
   return (
     <AnimatePresence mode="popLayout">
-      <motion.div key={pathname} className="sticky top-0 min-h-[100dvh]">
+      <motion.div key={pathname}>
         <FrozenRouter>{children}</FrozenRouter>
       </motion.div>
     </AnimatePresence>

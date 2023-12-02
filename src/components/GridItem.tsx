@@ -9,13 +9,16 @@ import { useAtom } from 'jotai';
 import { activeGridItemAtom } from '@/store/grid';
 import { MotionWrapper } from './MotionWrapper';
 import { clsx } from 'clsx';
+import { usePathname } from 'next/navigation';
 
 export interface GridItemProps extends Location {
-  isBigger: boolean;
+  isBigger?: boolean;
 }
 
 export const GridItem: FC<GridItemProps> = ({ title, image, slug, isBigger }) => {
   const [activeGridItem, setActiveGridItem] = useAtom(activeGridItemAtom);
+  // const pathname = usePathname();
+  // const isLocationDetailPage = pathname.startsWith('/locatie');
 
   return (
     <div className="relative mb-4">
@@ -24,6 +27,7 @@ export const GridItem: FC<GridItemProps> = ({ title, image, slug, isBigger }) =>
         scroll={false}
         onClick={() => setActiveGridItem(image.asset._id)}
       >
+        {/* {isLocationDetailPage && <div className={clsx(isBigger && 'aspect-[4/6]')} />} */}
         {image.asset && (
           <MotionImage
             asset={image.asset}

@@ -19,10 +19,12 @@ export const MotionImage: FC<MotionImageProps> = ({ asset, isActive, className }
     animate: { opacity: 1, scale: 1 },
   };
 
+  console.log('re-render');
+
   return (
     <motion.div
       layoutId={`image_${asset._id}`}
-      transition={{ ...ANIMATION_DEFAULT }}
+      transition={{ ...ANIMATION_DEFAULT, duration: 1 }}
       variants={isActive ? {} : variants}
       exit="initial"
       initial="initial"

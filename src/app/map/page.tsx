@@ -6,6 +6,6 @@ export async function generateStaticParams() {
 }
 export async function generateMetadata() {
   return {
-    title: 'Wandel Woensdag',
+    title: 'Map - Wandel Woensdag',
   };
 }

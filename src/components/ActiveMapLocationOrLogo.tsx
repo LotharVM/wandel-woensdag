@@ -9,6 +9,7 @@ import { AnimatePresence, motion } from 'framer-motion';
 
 import { CardLocation } from './cards/CardLocation';
 import { useOnClickOutside } from 'usehooks-ts';
+import { GridItem } from './GridItem';
 
 interface ActiveMapLocationOrLogoProps {}
 
@@ -35,7 +36,8 @@ export const ActiveMapLocationOrLogo: FC<ActiveMapLocationOrLogoProps> = ({}) =>
             animate={{ opacity: 1 }}
           >
             <div className="absolute left-1/2 top-1/2 z-10 aspect-[3/4] max-w-sm -translate-x-1/2 -translate-y-1/2">
-              <CardLocation location={activeMapLocation} />
+              {/* <CardLocation location={activeMapLocation} /> */}
+              <GridItem {...activeMapLocation} isBigger={false} />
             </div>
           </motion.div>
         )}
