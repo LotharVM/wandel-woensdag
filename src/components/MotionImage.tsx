@@ -13,13 +13,11 @@ interface MotionImageProps {
   className?: string;
 }
 
-export const MotionImage: FC<MotionImageProps> = ({ asset, isActive, className }) => {
+export const MotionImage = ({ asset, isActive, className }: MotionImageProps) => {
   const variants = {
     initial: { opacity: 0, scale: 0.9 },
     animate: { opacity: 1, scale: 1 },
   };
-
-  console.log('re-render');
 
   return (
     <motion.div

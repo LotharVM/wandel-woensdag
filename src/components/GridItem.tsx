@@ -9,26 +9,28 @@ import { useAtom } from 'jotai';
 import { activeGridItemAtom } from '@/store/grid';
 import { MotionWrapper } from './MotionWrapper';
 import { clsx } from 'clsx';
-import { usePathname } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
 
 export interface GridItemProps extends Location {
   isBigger?: boolean;
 }
 
-export const GridItem: FC<GridItemProps> = ({ title, image, slug, isBigger }) => {
+export const GridItem = ({ title, image, slug, isBigger }: GridItemProps) => {
   const [activeGridItem, setActiveGridItem] = useAtom(activeGridItemAtom);
-  // const pathname = usePathname();
-  // const isLocationDetailPage = pathname.startsWith('/locatie');
+
+  const handleClick = () => {
+    setActiveGridItem(image.asset._id);
+  };
+  const pathname = usePathname();
+  const isLocationDetailPage = pathname.startsWith('/locatie');
 
   return (
     <div className="relative mb-4">
-      <Link
-        href={`/locatie/${slug.current}`}
-        scroll={false}
-        onClick={() => setActiveGridItem(image.asset._id)}
-      >
-        {/* {isLocationDetailPage && <div className={clsx(isBigger && 'aspect-[4/6]')} />} */}
-        {image.asset && (
+      <Link href={`/locatie/${slug.current}`} scroll={false} onClick={() => handleClick()}>
+        {isLocationDetailPage && (
+          <div className={clsx(isBigger ? 'aspect-[4/6]' : 'aspect-[3/4]')} />
+        )}
+        {image.asset && !isLocationDetailPage && (
           <MotionImage
             asset={image.asset}
             isActive={activeGridItem === image.asset._id}

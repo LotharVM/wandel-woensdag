@@ -1,4 +1,3 @@
-import { queryAllLocations } from '@/api/queryAllLocations';
 import { Grid } from '@/components/Grid';
 import { MotionWrapper } from '@/components/MotionWrapper';
 import Link from 'next/link';
@@ -11,7 +10,7 @@ interface IHomepage {
 
 export const Homepage = ({ locations }: IHomepage) => {
   return (
-    <div className="w-full">
+    <div className="h-[100dvh] w-full overflow-auto" id="home">
       <div className="relative flex">
         <div className="w-[50vw] p-4">
           <Grid items={locations} />
@@ -24,11 +23,11 @@ export const Homepage = ({ locations }: IHomepage) => {
                   wandel
                   <span className="absolute bottom-0 left-[50%] -translate-x-1/2">Woensdag</span>
                 </h1>
-                <p className="text-md text-balance mx-auto max-w-xl uppercase leading-tight">
+                <p className="text-md mx-auto max-w-xl text-balance uppercase leading-tight">
                   Vijf kritische, doch rechtvaardige wandelaars met een onstilbare dorst naar een
                   straffe bak koffie in amsterdam
                 </p>
-                <p className="text-md text-balance absolute bottom-[9vw] left-0 mx-auto w-full text-center uppercase leading-tight">
+                <p className="text-md absolute bottom-[9vw] left-0 mx-auto w-full text-balance text-center uppercase leading-tight">
                   Lees ons manifest
                 </p>
                 <ActiveMapLocationOrLogo />

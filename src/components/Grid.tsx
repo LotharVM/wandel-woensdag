@@ -5,7 +5,7 @@ interface GridProps {
   items: GridItemProps[];
 }
 
-export const Grid: FC<GridProps> = ({ items }) => {
+export const Grid = ({ items }: GridProps) => {
   return (
     <div className="columns-2 gap-4">
       {items.map((item, index) => (

@@ -3,3 +3,4 @@ import { atom } from 'jotai';
 
 export const activeGridItemAtom = atom<string | null>(null);
 export const ActiveMapLocationAtom = atom<Location | null>(null);
+export const scrollTopAtom = atom<number>(0);

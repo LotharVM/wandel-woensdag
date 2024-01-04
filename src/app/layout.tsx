@@ -2,7 +2,6 @@ import './global.css';
 import { Inter } from 'next/font/google';
 const inter = Inter({ subsets: ['latin'] });
 
-import { Animate } from '@/components/Animate';
 import { ReactNode } from 'react';
 import { MotionHome } from '@/components/MotionHome';
 import { queryAllLocations } from '@/api/queryAllLocations';
@@ -21,7 +20,7 @@ export default async function RootLayout({ children, parallel }: LayoutProps) {
       <head>
         <meta name="robots" content="noindex, nofollow" />
       </head>
-      <body className={`bg-primary text-black ${inter.className}`}>
+      <body className={`min-h-screen bg-primary text-black ${inter.className}`}>
         <MotionHome>
           <Homepage locations={locations} />
           {parallel}
