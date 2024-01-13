@@ -30,8 +30,6 @@ export const CardLocation = ({ location, className }: CardLocationProps) => {
     router.push(`/locatie/${slug.current}`);
   };
 
-  console.log({ id: `${LAYOUT_ID_PREFIX.MAP}_${image.asset._id}` });
-
   return (
     <div className="relative mb-4">
       <Link href={`/locatie/${slug.current}`} scroll={false} onClick={handleClick}>
