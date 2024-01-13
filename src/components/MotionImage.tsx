@@ -2,14 +2,15 @@
 
 import { motion } from 'framer-motion';
 import Image from 'next/image';
-import React, { FC } from 'react';
+import React from 'react';
 import { GridItemProps } from './GridItem';
 import { ANIMATION_DEFAULT } from '@/constants/animations';
 import { clsx } from 'clsx';
+import { LAYOUT_ID_PREFIX } from '@/constants/layoutIds';
 
 interface MotionImageProps {
   asset: GridItemProps['image']['asset'];
-  isActive: boolean;
+  isActive?: boolean;
   className?: string;
 }
 
@@ -21,8 +22,9 @@ export const MotionImage = ({ asset, isActive, className }: MotionImageProps) =>
 
   return (
     <motion.div
-      layoutId={`image_${asset._id}`}
-      transition={{ ...ANIMATION_DEFAULT, duration: 1 }}
+      id={`${LAYOUT_ID_PREFIX.DEFAULT}_${asset._id}`}
+      layoutId={`${LAYOUT_ID_PREFIX.DEFAULT}_${asset._id}`}
+      transition={{ ...ANIMATION_DEFAULT, duration: 0.75 }}
       variants={isActive ? {} : variants}
       exit="initial"
       initial="initial"

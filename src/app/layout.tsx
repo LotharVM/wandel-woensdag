@@ -3,16 +3,17 @@ import { Inter } from 'next/font/google';
 const inter = Inter({ subsets: ['latin'] });
 
 import { ReactNode } from 'react';
-import { MotionHome } from '@/components/MotionHome';
 import { queryAllLocations } from '@/api/queryAllLocations';
 import { Homepage } from '@/components/pages/Homepage';
+import { ScrollHandlers } from '@/components/ScrollHandlers';
 
 interface LayoutProps {
   children: ReactNode;
   parallel: ReactNode;
+  modal: ReactNode;
 }
 
-export default async function RootLayout({ children, parallel }: LayoutProps) {
+export default async function RootLayout({ children, parallel, modal }: LayoutProps) {
   const locations = await queryAllLocations();
 
   return (
@@ -21,11 +22,13 @@ export default async function RootLayout({ children, parallel }: LayoutProps) {
         <meta name="robots" content="noindex, nofollow" />
       </head>
       <body className={`min-h-screen bg-primary text-black ${inter.className}`}>
-        <MotionHome>
+        <main className="relative flex [&>*]:flex-shrink-0">
           <Homepage locations={locations} />
-          {parallel}
           {children}
-        </MotionHome>
+          {parallel}
+        </main>
+        <ScrollHandlers />
+        {modal}
       </body>
     </html>
   );

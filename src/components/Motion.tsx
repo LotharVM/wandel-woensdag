@@ -8,20 +8,9 @@ import React, { FC, ReactNode } from 'react';
 interface MotionProps {
   children: ReactNode;
   className?: string;
+  rest: any;
 }
 
-export const Motion: FC<MotionProps> = ({ children, className }) => {
-  const pathname = usePathname();
-  console.log({ pathname });
-  return (
-    <motion.div
-      className={className}
-      initial={{ x: '100%' }}
-      animate={{ x: 0 }}
-      exit={{ x: '100%' }}
-      transition={ANIMATION_DEFAULT}
-    >
-      {children}
-    </motion.div>
-  );
+export const Motion: FC<MotionProps> = ({ children, rest }) => {
+  return <motion.div {...rest}>{children}</motion.div>;
 };
