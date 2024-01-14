@@ -13,13 +13,13 @@ export default async function PageLocationDetail({ params }: PageProps) {
   const data = await queryLocation({ slug });
 
   return (
-    <div className="fixed right-0 top-0 z-10 h-[100dvh] w-[100vw]">
+    <div className="fixed left-0 top-0 z-10 h-[100dvh] w-full">
       <div className="w-full">
-        <div className="relative mr-4 flex items-start justify-between pt-4">
-          <div className="w-[50vw] bg-primary">
+        <div className="relative flex flex-col items-start justify-between md:mr-4 md:flex-row md:pt-4">
+          <div className="w-full bg-primary md:w-[50vw]">
             <LocationContent data={data} />
           </div>
-          <div className="flex-1">
+          <div className="-order-1 flex-1 md:order-1">
             <div className="max-h-[calc(100vh-32px)]">
               <LocationImage image={data.image} />
             </div>

@@ -29,16 +29,16 @@ export const HomepageBrand = ({ locationsAmount }: HomepageBrandProps) => {
 
   return (
     <motion.div
-      className="sticky top-4 flex h-[calc(100dvh-32px)] flex-1 justify-center pr-4"
+      className="sticky top-4 flex h-full flex-1 justify-center md:pr-4"
       animate={{
         opacity: isLocationDetailPage ? 0 : 1,
         scale: isLocationDetailPage ? 0.975 : 1,
       }}
       transition={{ ...ANIMATION_DEFAULT, duration: 0.75 }}
     >
-      <motion.div className="flex h-full w-full flex-col justify-between text-center">
+      <motion.div className="flex h-[60dvh] w-full flex-col justify-between text-center md:h-full">
         <div>
-          <h1 className="text-[8.5vw] uppercase leading-none tracking-tight">
+          <h1 className="overflow-hidden text-[16.5vw] uppercase leading-none tracking-tight md:text-[8.5vw]">
             wandel
             <span className="absolute bottom-0 left-[50%] -translate-x-1/2">Woensdag</span>
           </h1>
@@ -46,14 +46,14 @@ export const HomepageBrand = ({ locationsAmount }: HomepageBrandProps) => {
             Vijf kritische, doch rechtvaardige wandelaars met een onstilbare dorst naar een straffe
             bak koffie in amsterdam
           </p>
-          <p className="text-md absolute bottom-[9vw] left-0 mx-auto flex w-full justify-center gap-4 text-balance text-center uppercase leading-tight xl:text-lg">
+          <p className="text-md absolute bottom-[18vw] left-0 mx-auto flex w-full justify-center gap-4 text-balance text-center uppercase leading-tight md:bottom-[9vw] xl:text-lg">
             <span>Lees</span>
             <span>ons</span>
             <span>manifest</span>
           </p>
           <ActiveMapLocationOrLogo />
         </div>
-        <div className="text-md absolute left-0 right-0 top-0 flex h-full w-full items-center p-4 uppercase xl:text-lg">
+        <div className="text-md absolute left-0 right-0 top-0 hidden h-full w-full p-4 uppercase md:flex md:items-center xl:text-lg">
           <div className="flex w-full justify-between">
             <div className="flex">
               {NAV.map(link => {

@@ -63,8 +63,8 @@ export const GridItem = ({ title, image, slug, address, isBigger }: GridItemProp
               />
 
               <div className="absolute bottom-0 left-0 h-2/5 w-full bg-opacity-50 bg-gradient-to-t from-black to-transparent opacity-50" />
-              <div className="absolute bottom-0 mt-auto p-4 text-white">
-                <h2 className="text-xl uppercase">{title}</h2>
+              <div className="absolute bottom-0 mt-auto p-3 text-white md:p-4">
+                <h2 className="text-base uppercase md:text-xl">{title}</h2>
                 <p className="text-xs">{address?.split(',')[0]}</p>
               </div>
             </div>
