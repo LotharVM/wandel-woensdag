@@ -34,7 +34,7 @@ export const GridItem = ({ title, image, slug, address, isBigger }: GridItemProp
   const isLocationDetailPage = pathname.startsWith('/locatie');
 
   return (
-    <div className="relative">
+    <div className="group relative">
       <Link href={`/locatie/${slug.current}`} scroll={false} onClick={handleClick}>
         {isLocationDetailPage && (
           <div className={clsx(isBigger ? 'aspect-[4/6]' : 'aspect-[3/4]')} />
@@ -53,7 +53,7 @@ export const GridItem = ({ title, image, slug, address, isBigger }: GridItemProp
             <div className="max-h-[calc(100vh-32px)] overflow-hidden rounded-[4px]">
               <Image
                 className={clsx(
-                  'aspect-[3/4] h-full w-full object-cover',
+                  'aspect-[3/4] h-full w-full object-cover transition-transform duration-700 group-hover:scale-105',
                   isBigger && 'aspect-[4/6]'
                 )}
                 width={'600'}

@@ -1,7 +1,6 @@
 import { queryAllLocations } from '@/api/queryAllLocations';
 import { Map } from '@/components/Map';
-import { Motion } from '@/components/Motion';
-import React, { FC } from 'react';
+import React from 'react';
 
 interface PageProps {}
 
