@@ -4,6 +4,7 @@ const inter = Inter({ subsets: ['latin'] });
 
 import { ReactNode } from 'react';
 import { queryAllLocations } from '@/api/queryAllLocations';
+import { NeueHaasDisplay } from '@/utils/loadLocalFonts';
 import { Homepage } from '@/components/pages/Homepage';
 import { ScrollHandlers } from '@/components/ScrollHandlers';
 
@@ -17,11 +18,11 @@ export default async function RootLayout({ children, parallel, modal }: LayoutPr
   const locations = await queryAllLocations();
 
   return (
-    <html lang="nl">
+    <html lang="nl" className={NeueHaasDisplay.className}>
       <head>
         <meta name="robots" content="noindex, nofollow" />
       </head>
-      <body className={`min-h-screen bg-primary text-black ${inter.className}`}>
+      <body className={`min-h-screen bg-primary text-black`}>
         <main className="relative flex [&>*]:flex-shrink-0">
           <Homepage locations={locations} />
           {children}

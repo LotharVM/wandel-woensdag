@@ -1,5 +1,5 @@
-import { fetchData } from "@/api/api";
-import { LOCATION_QUERY } from "../queries/LOCATION_QUERY";
+import { fetchData } from '@/api/api';
+import { LOCATION_QUERY } from '../queries/LOCATION_QUERY';
 
 export const queryLocation = async ({ slug }) => {
   const data = await fetchData({
