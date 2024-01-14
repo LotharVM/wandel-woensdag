@@ -25,7 +25,7 @@ export const LocationContent = ({ data }: LocationContentProps) => {
         }}
         transition={{ ...ANIMATION_DEFAULT, duration: 0.75 }}
       >
-        <div className="px-4 pt-10 md:pt-0">
+        <div className="px-4 py-10 md:pt-0">
           <h1 className="overflow-hidden text-ellipsis text-6xl uppercase leading-none md:text-[120px]">
             {data.title}
           </h1>

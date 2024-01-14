@@ -23,7 +23,7 @@ export const LocationImage = ({ image }: LocationImageProps) => {
       className={clsx('aspect-[3/4] h-full w-full')}
     >
       <div className="max-h-[calc(100vh-32px)] overflow-hidden">
-        <Image
+        <img
           className={clsx('aspect-[3/4] h-full w-full object-cover')}
           width={'600'}
           height={'800'}

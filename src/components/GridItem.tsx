@@ -51,7 +51,7 @@ export const GridItem = ({ title, image, slug, address, isBigger }: GridItemProp
             className={clsx('aspect-[3/4] h-full w-full', isBigger && 'aspect-[4/6]')}
           >
             <div className="max-h-[calc(100vh-32px)] overflow-hidden rounded-[4px]">
-              <Image
+              <img
                 className={clsx(
                   'aspect-[3/4] h-full w-full object-cover transition-transform duration-700 group-hover:scale-105',
                   isBigger && 'aspect-[4/6]'

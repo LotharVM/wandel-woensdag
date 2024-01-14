@@ -13,7 +13,7 @@ export default async function PageLocationDetail({ params }: PageProps) {
   const data = await queryLocation({ slug });
 
   return (
-    <div className="fixed left-0 top-0 z-10 h-[100dvh] w-full">
+    <div className="fixed left-0 top-0 z-10 h-[100dvh] w-full overflow-auto">
       <div className="w-full">
         <div className="relative flex flex-col items-start justify-between md:mr-4 md:flex-row md:pt-4">
           <div className="w-full bg-primary md:w-[50vw]">
