@@ -1,7 +1,4 @@
 import { Grid } from '@/components/Grid';
-import { MotionWrapper } from '@/components/MotionWrapper';
-import Link from 'next/link';
-import { ActiveMapLocationOrLogo } from '@/components/ActiveMapLocationOrLogo';
 import { Location } from '@/interfaces/Location';
 import { HomepageBrand } from './HomepageBrand';
 
