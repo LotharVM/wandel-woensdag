@@ -22,7 +22,7 @@ export const LocationImage = ({ image }: LocationImageProps) => {
       transition={{ ...ANIMATION_DEFAULT, duration: 0.75 }}
       className={clsx('aspect-[3/4] h-full w-full')}
     >
-      <div className="max-h-[calc(100vh-32px)] overflow-hidden">
+      <div className="max-h-[calc(100vh-32px)] px-3 py-3 md:px-0 md:py-0">
         <img
           className={clsx('aspect-[3/4] h-full w-full object-cover')}
           width={'600'}

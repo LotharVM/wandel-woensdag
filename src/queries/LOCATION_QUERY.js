@@ -1,4 +1,4 @@
-import { gql } from "graphql-request";
+import { gql } from 'graphql-request';
 
 export const LOCATION_QUERY = gql`
   query location($slug: String) {
@@ -10,6 +10,11 @@ export const LOCATION_QUERY = gql`
         }
         title
         intro
+        taste: ratingSaste
+        vibe: ratingSibe
+        design: ratingSesign
+        temperature: ratingSemperature
+        service: ratingService
         image {
           ... on Image {
             asset {

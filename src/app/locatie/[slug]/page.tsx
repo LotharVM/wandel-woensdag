@@ -19,7 +19,7 @@ export default async function PageLocationDetail({ params }: PageProps) {
           <div className="w-full bg-primary md:w-[50vw]">
             <LocationContent data={data} />
           </div>
-          <div className="-order-1 flex-1 md:order-1">
+          <div className="-order-1 w-full flex-1 md:order-1">
             <div className="max-h-[calc(100vh-32px)]">
               <LocationImage image={data.image} />
             </div>
