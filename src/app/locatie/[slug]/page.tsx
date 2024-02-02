@@ -1,3 +1,4 @@
+import { queryAllLocations } from '@/api/queryAllLocations';
 import { queryLocation } from '@/api/queryLocation';
 import { LocationContent } from '@/components/location/LocationContent';
 import { LocationImage } from '@/components/location/LocationImage';
@@ -29,5 +30,7 @@ export default async function PageLocationDetail({ params }: PageProps) {
 }
 
 export async function generateStaticParams() {
-  return [];
+  const locations = await queryAllLocations();
+  const params = locations.map(({ slug }) => ({ slug: slug.current }));
+  return params;
 }

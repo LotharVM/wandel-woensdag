@@ -13,7 +13,7 @@ export const Homepage = ({ locations }: IHomepage) => {
         <div className="z-10 flex-1 p-3 md:w-0 md:p-4">
           <Grid items={locations} />
         </div>
-        <div className="md:-w0 sticky top-4 -order-1 flex flex-1 justify-center py-10 md:order-1 md:h-[calc(100dvh-32px)] md:py-0">
+        <div className="md:-w0 sticky top-0 -order-1 flex h-[100dvh] justify-center py-2 md:top-4 md:order-1 md:h-[calc(100dvh-32px)] md:flex-1 md:py-0">
           <HomepageBrand locationsAmount={locations.length} />
         </div>
       </div>

@@ -39,7 +39,7 @@ export const ActiveMapLocationOrLogo = ({}: ActiveMapLocationOrLogoProps) => {
           animate={{ opacity: 1 }}
         >
           <Image
-            className="absolute left-1/2 top-1/2 h-1/3 -translate-x-1/2 -translate-y-1/2 object-contain brightness-50"
+            className="mx-auto my-[7.5vh] w-3/5 object-contain brightness-50 md:absolute md:left-1/2 md:top-1/2 md:h-1/3 md:w-auto md:-translate-x-1/2 md:-translate-y-1/2"
             src={WWLogo}
             alt="Wandel Woensdag"
           />
