@@ -17,11 +17,17 @@
     overscroll-behavior-y: none;
     font-weight: 450;
   }
+  @media only screen and (min-width: 1600px) {
+    html,
+    body {
+      font-size: calc(100% + 0.075vw);
+    }
+  }
 }
 
 @layer components {
   .rich-text {
-    '* + *' {
+    * + * {
       @apply mt-4;
     }
 
@@ -37,14 +43,15 @@
   }
 
   .hide-scrollbar {
-    msoverflowstyle: 'none';
-    overflow: '-moz-scrollbars-none';
-    scrollbarwidth: 'none';
+    -ms-overflow-style: none;
+    overflow: -moz-scrollbars-none;
+    scrollbar-width: none;
+
     &::-webkit-scrollbar {
-      display: 'none';
+      display: none;
     }
-    &:-webkit-scrollbar {
-      display: 'none';
+    &::-webkit-scrollbar {
+      display: none;
     }
   }
 
@@ -53,5 +60,8 @@
   }
   .text-balance {
     text-wrap: balance;
+  }
+  .heading-xs {
+    @apply text-xs font-bold uppercase;
   }
 }

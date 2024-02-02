@@ -36,11 +36,11 @@ export const HomepageBrand = ({ locationsAmount }: HomepageBrandProps) => {
       }}
       transition={{ ...ANIMATION_DEFAULT, duration: 0.75 }}
     >
-      <motion.div className="flex h-[60dvh] w-full flex-col justify-between text-center md:h-full">
+      <motion.div className="relative flex h-[60dvh] w-full flex-col justify-between text-center md:h-full">
         <div>
-          <h1 className="overflow-hidden text-[16.5vw] uppercase leading-none tracking-tight md:text-[8.5vw]">
-            wandel
-            <span className="absolute bottom-0 left-[50%] -translate-x-1/2">Woensdag</span>
+          <h1 className="overflow-hidden text-[16.5vw] uppercase leading-none tracking-tight md:text-[9vw]">
+            <span className="-mt-4 block">wandel</span>
+            <span className="absolute -bottom-5 left-[50%] -translate-x-1/2">Woensdag</span>
           </h1>
           <p className="text-md mx-auto text-pretty uppercase leading-tight md:max-w-[32vw] xl:text-lg xl:leading-tight">
             Vijf kritische, doch rechtvaardige wandelaars met een onstilbare dorst naar een straffe
@@ -53,7 +53,7 @@ export const HomepageBrand = ({ locationsAmount }: HomepageBrandProps) => {
           </p>
           <ActiveMapLocationOrLogo />
         </div>
-        <div className="text-md absolute left-0 right-0 top-0 hidden h-full w-full p-4 uppercase md:flex md:items-center xl:text-lg">
+        <div className="text-md absolute left-0 right-0 top-0 hidden h-full uppercase md:flex md:items-center xl:text-lg">
           <div className="flex w-full justify-between">
             <div className="flex">
               {NAV.map(link => {

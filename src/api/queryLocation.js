@@ -7,8 +7,6 @@ export const queryLocation = async ({ slug }) => {
     variables: { slug },
   });
 
-  console.log(data);
-
   if (data?.location?.[0]) {
     return data.location[0];
   }

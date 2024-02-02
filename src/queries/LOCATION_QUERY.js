@@ -10,6 +10,7 @@ export const LOCATION_QUERY = gql`
         }
         title
         intro
+        instagram
         taste: ratingSaste
         vibe: ratingSibe
         design: ratingSesign

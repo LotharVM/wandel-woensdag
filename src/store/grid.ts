@@ -6,3 +6,12 @@ export const activeGridItemAtom = atom<string | null>(null);
 export const ActiveMapLocationAtom = atom<Location | null>(null);
 export const layoutIdPrefixAtom = atom<string | null>(LAYOUT_ID_PREFIX.DEFAULT);
 export const scrollHorizontalAtom = atom<number>(0);
+
+type appRoutingAtomProps = {
+  currentRoute: string | null;
+  previousRoute: string | null;
+};
+export const appRoutingAtom = atom<appRoutingAtomProps>({
+  currentRoute: null,
+  previousRoute: null,
+});

@@ -48,25 +48,25 @@ export const GridItem = ({ title, image, slug, address, isBigger }: GridItemProp
             exit="initial"
             initial="initial"
             animate="animate"
-            className={clsx('aspect-[3/4] h-full w-full', isBigger && 'aspect-[4/6]')}
+            className={clsx(
+              'relative aspect-[3/4] h-full w-full overflow-hidden rounded-[4px]',
+              isBigger && 'aspect-[4/6]'
+            )}
           >
-            <div className="max-h-[calc(100vh-32px)] overflow-hidden rounded-[4px]">
-              <img
-                className={clsx(
-                  'aspect-[3/4] h-full w-full object-cover transition-transform duration-700 group-hover:scale-105',
-                  isBigger && 'aspect-[4/6]'
-                )}
-                width={'600'}
-                height={'800'}
-                src={asset.url}
-                alt={asset._id}
-              />
-
-              <div className="absolute bottom-0 left-0 h-2/5 w-full bg-opacity-50 bg-gradient-to-t from-black to-transparent opacity-50" />
-              <div className="absolute bottom-0 mt-auto p-3 text-white md:p-4">
-                <h2 className="text-base uppercase md:text-xl">{title}</h2>
-                <p className="text-xs">{address?.split(',')[0]}</p>
-              </div>
+            <img
+              className={clsx(
+                'aspect-[3/4] h-full w-full object-cover transition-transform duration-700 group-hover:scale-105',
+                isBigger && 'aspect-[4/6]'
+              )}
+              width={'600'}
+              height={'800'}
+              src={asset.url}
+              alt={asset._id}
+            />
+            <div className="absolute bottom-0 left-0 h-2/5 w-full bg-opacity-50 bg-gradient-to-t from-black to-transparent opacity-50" />
+            <div className="absolute bottom-0 mt-auto p-3 text-white md:p-4">
+              <h2 className="text-base uppercase md:text-xl">{title}</h2>
+              <p className="text-xs">{address?.split(',')[0]}</p>
             </div>
           </MotionDiv>
         )}
