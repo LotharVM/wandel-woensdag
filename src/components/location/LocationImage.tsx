@@ -34,13 +34,14 @@ export const LocationImage = ({ image }: LocationImageProps) => {
         </button>
         <Image
           className={clsx('aspect-[3/4] h-full w-full object-cover')}
-          width={'1200'}
-          height={'1600'}
-          src={image.asset.url}
+          width={'600'}
+          height={'800'}
+          src={image.asset.url + '?h=1600'}
           alt={image.asset._id}
           placeholder="blur"
           blurDataURL={image.asset.metadata.lqip}
           priority
+          unoptimized
         />
       </div>
     </motion.div>

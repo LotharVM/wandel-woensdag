@@ -25,7 +25,7 @@ export const GridItem = ({ title, image, slug, address, isBigger }: GridItemProp
 
   const variants = {
     initial: { scale: 0.9 },
-    animate: { scale: isLocationDetailPage ? 0.9 : 1, opacity: isLocationDetailPage ? 0 : 1 },
+    animate: { scale: isLocationDetailPage ? 0.9 : 1 },
   };
 
   const handleClick = () => {
@@ -33,7 +33,11 @@ export const GridItem = ({ title, image, slug, address, isBigger }: GridItemProp
   };
 
   return (
-    <div className="group relative">
+    <MotionDiv
+      className="group relative"
+      animate={{ opacity: isLocationDetailPage ? 0 : 1 }}
+      transition={{ ...ANIMATION_DEFAULT, duration: 0.75 }}
+    >
       <Link href={`/locatie/${slug.current}`} scroll={false} onClick={handleClick}>
         {/* {isLocationDetailPage && (
           <div className={clsx(isBigger ? 'aspect-[4/6]' : 'aspect-[3/4]')} />
@@ -57,12 +61,14 @@ export const GridItem = ({ title, image, slug, address, isBigger }: GridItemProp
                 'aspect-[3/4] h-full w-full object-cover transition-transform duration-700 group-hover:scale-105',
                 isBigger && 'aspect-[4/6]'
               )}
-              width={'1200'}
-              height={'1600'}
-              src={asset.url}
+              width={'600'}
+              height={'800'}
+              src={asset.url + '?h=1600'}
               alt={asset._id}
               placeholder="blur"
               blurDataURL={image.asset.metadata.lqip}
+              unoptimized
+              priority
             />
             <div className="absolute bottom-0 left-0 h-2/5 w-full bg-opacity-50 bg-gradient-to-t from-black to-transparent opacity-50" />
             <div className="absolute bottom-0 mt-auto p-3 text-white md:p-4">
@@ -72,6 +78,6 @@ export const GridItem = ({ title, image, slug, address, isBigger }: GridItemProp
           </MotionDiv>
         )}
       </Link>
-    </div>
+    </MotionDiv>
   );
 };
