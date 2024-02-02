@@ -8,6 +8,7 @@ import { motion } from 'framer-motion';
 import { useAtomValue } from 'jotai';
 import React from 'react';
 import CloseIcon from '../../../public/close.svg';
+import Image from 'next/image';
 
 interface LocationImageProps {
   image: any;
@@ -31,12 +32,15 @@ export const LocationImage = ({ image }: LocationImageProps) => {
         >
           <img src={CloseIcon.src} />
         </button>
-        <img
+        <Image
           className={clsx('aspect-[3/4] h-full w-full object-cover')}
-          width={'600'}
-          height={'800'}
+          width={'1200'}
+          height={'1600'}
           src={image.asset.url}
           alt={image.asset._id}
+          placeholder="blur"
+          blurDataURL={image.asset.metadata.lqip}
+          priority
         />
       </div>
     </motion.div>

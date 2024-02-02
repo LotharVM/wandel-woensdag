@@ -3,7 +3,15 @@ export interface Location {
   slug: { current: string };
   title: string;
   intro?: string;
-  image: { asset: { _id: string; url: string } };
+  image: {
+    asset: {
+      _id: string;
+      url: string;
+      metadata: {
+        lqip: string;
+      };
+    };
+  };
   address: string;
   googleMaps?: {
     lat: number;

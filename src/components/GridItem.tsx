@@ -19,27 +19,26 @@ export interface GridItemProps extends Location {
 
 export const GridItem = ({ title, image, slug, address, isBigger }: GridItemProps) => {
   const setLayoutIdPrefix = useSetAtom(layoutIdPrefixAtom);
+  const pathname = usePathname();
+  const isLocationDetailPage = pathname.startsWith('/locatie');
   const { asset } = image;
 
   const variants = {
     initial: { scale: 0.9 },
-    animate: { scale: 1 },
+    animate: { scale: isLocationDetailPage ? 0.9 : 1, opacity: isLocationDetailPage ? 0 : 1 },
   };
 
   const handleClick = () => {
     setLayoutIdPrefix(LAYOUT_ID_PREFIX.DEFAULT);
   };
 
-  const pathname = usePathname();
-  const isLocationDetailPage = pathname.startsWith('/locatie');
-
   return (
     <div className="group relative">
       <Link href={`/locatie/${slug.current}`} scroll={false} onClick={handleClick}>
-        {isLocationDetailPage && (
+        {/* {isLocationDetailPage && (
           <div className={clsx(isBigger ? 'aspect-[4/6]' : 'aspect-[3/4]')} />
-        )}
-        {image.asset && !isLocationDetailPage && (
+        )} */}
+        {image.asset && (
           <MotionDiv
             id={`${LAYOUT_ID_PREFIX.DEFAULT}_${asset._id}`}
             layoutId={`${LAYOUT_ID_PREFIX.DEFAULT}_${asset._id}`}
@@ -53,15 +52,17 @@ export const GridItem = ({ title, image, slug, address, isBigger }: GridItemProp
               isBigger && 'aspect-[4/6]'
             )}
           >
-            <img
+            <Image
               className={clsx(
                 'aspect-[3/4] h-full w-full object-cover transition-transform duration-700 group-hover:scale-105',
                 isBigger && 'aspect-[4/6]'
               )}
-              width={'600'}
-              height={'800'}
+              width={'1200'}
+              height={'1600'}
               src={asset.url}
               alt={asset._id}
+              placeholder="blur"
+              blurDataURL={image.asset.metadata.lqip}
             />
             <div className="absolute bottom-0 left-0 h-2/5 w-full bg-opacity-50 bg-gradient-to-t from-black to-transparent opacity-50" />
             <div className="absolute bottom-0 mt-auto p-3 text-white md:p-4">

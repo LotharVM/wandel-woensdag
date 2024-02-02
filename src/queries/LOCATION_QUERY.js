@@ -21,6 +21,9 @@ export const LOCATION_QUERY = gql`
             asset {
               _id
               url
+              metadata {
+                lqip
+              }
             }
           }
         }
