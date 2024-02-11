@@ -7,6 +7,7 @@ import { NeueHaasDisplay } from '@/utils/loadLocalFonts';
 import { Homepage } from '@/components/pages/Homepage';
 import { ScrollHandlers } from '@/components/ScrollHandlers';
 import { AppRouterWrapper } from '@/components/AppRouterWrapper';
+import { MobileNavToggle } from '@/components/MobileNavToggle';
 
 interface LayoutProps {
   children: ReactNode;
@@ -34,6 +35,7 @@ export default async function RootLayout({ children, parallel, modal }: LayoutPr
           {modal}
           {!isDevMode && <Analytics />}
         </AppRouterWrapper>
+        <MobileNavToggle />
       </body>
     </html>
   );

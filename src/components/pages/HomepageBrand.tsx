@@ -1,9 +1,9 @@
 'use client';
 
-import React, { FC } from 'react';
+import React, { FC, RefObject, useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { motion } from 'framer-motion';
+import { motion, useMotionValue, useScroll, useTransform } from 'framer-motion';
 import { ANIMATION_DEFAULT } from '@/constants/animations';
 import { ActiveMapLocationOrLogo } from '../ActiveMapLocationOrLogo';
 
@@ -23,12 +23,33 @@ const NAV = [
 ];
 
 export const HomepageBrand = ({ locationsAmount }: HomepageBrandProps) => {
+  const [screenHeight, setScreenHeight] = useState(1000);
+  const y = useMotionValue(0);
   const pathname = usePathname();
   const isLocationDetailPage = pathname.startsWith('/locatie');
-  const isMapPage = pathname.startsWith('/map');
+  const filter = useTransform(y, [0, screenHeight], ['blur(0px)', 'blur(8px)']);
+  const opacity = useTransform(y, [screenHeight / 2, screenHeight], [1, 0]);
+
+  useEffect(() => {
+    const homeElement = document.getElementById('home');
+    const isMobile = window.innerWidth < 480;
+    if (!homeElement || !isMobile) return;
+
+    setScreenHeight(window.innerHeight);
+
+    const setMotionValue = (e: Event) => {
+      const scrollTop = (e.target as HTMLElement).scrollTop;
+      y.set(scrollTop);
+    };
+
+    homeElement.addEventListener('scroll', setMotionValue);
+
+    return () => homeElement.removeEventListener('scroll', setMotionValue);
+  }, []);
 
   return (
     <motion.div
+      style={{ filter, opacity }}
       className="flex h-full justify-center px-3 md:flex-1 md:px-0 md:pr-4"
       animate={{
         opacity: isLocationDetailPage ? 0 : 1,

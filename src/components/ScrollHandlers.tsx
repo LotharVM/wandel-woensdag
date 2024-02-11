@@ -15,11 +15,14 @@ export const ScrollHandlers = () => {
   const isMap = pathname === '/map';
 
   useEffect(() => {
+    const isMobile = document.body.clientWidth < 480;
+
     if (isLocationDetailPage) {
       setScrollValue(val => val);
     } else if (isMap) {
+      const distance = isMobile ? '-100vw' : '-50vw';
       // @ts-ignore
-      setScrollValue('-50vw');
+      setScrollValue(distance);
     } else if (isHome) {
       setScrollValue(0);
     }

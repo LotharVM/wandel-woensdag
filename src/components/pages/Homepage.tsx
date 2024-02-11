@@ -8,7 +8,7 @@ interface IHomepage {
 
 export const Homepage = ({ locations }: IHomepage) => {
   return (
-    <div className="h-[100dvh] w-full overflow-auto" id="home">
+    <div className="h-[100dvh] w-full overflow-auto overscroll-y-none" id="home">
       <div className="relative flex flex-col md:flex-row">
         <div className="z-10 flex-1 p-3 md:w-0 md:p-4">
           <Grid items={locations} />
