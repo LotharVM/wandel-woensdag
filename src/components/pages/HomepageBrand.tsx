@@ -1,6 +1,7 @@
 'use client';
 
 import React, { FC, RefObject, useEffect, useRef, useState } from 'react';
+
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { motion, useMotionValue, useScroll, useTransform } from 'framer-motion';
@@ -69,11 +70,14 @@ export const HomepageBrand = ({ locationsAmount }: HomepageBrandProps) => {
             Vijf kritische, doch rechtvaardige wandelaars met een onstilbare dorst naar een straffe
             bak koffie in amsterdam
           </p>
-          <p className="text-md bottom-[18vw] left-0 order-1 mx-auto mt-3 flex w-full justify-center gap-4 text-balance text-center font-bold uppercase leading-tight md:absolute md:bottom-[9vw] md:mt-0 md:font-normal xl:text-lg">
+          <Link
+            href="/manifest"
+            className="text-md bottom-[18vw] left-0 z-10 order-1 mx-auto mt-3 flex w-full justify-center gap-4 text-balance text-center font-bold uppercase leading-tight md:absolute md:bottom-[9vw] md:mt-0 md:font-normal xl:text-lg"
+          >
             <span>Lees</span>
             <span>ons</span>
             <span>manifest</span>
-          </p>
+          </Link>
           <ActiveMapLocationOrLogo />
         </div>
         <div className="text-md absolute left-0 right-0 top-0 hidden h-full uppercase md:flex md:items-center xl:text-lg">

@@ -16,6 +16,7 @@
   body {
     overscroll-behavior-y: none;
     font-weight: 450;
+    background: #0063c8 !important;
   }
   @media only screen and (min-width: 1600px) {
     html,

@@ -26,7 +26,7 @@ export default async function RootLayout({ children, parallel, modal }: LayoutPr
       </head>
       <body className={`min-h-screen bg-primary text-black`}>
         <AppRouterWrapper>
-          <main className="relative flex [&>*]:flex-shrink-0">
+          <main className="relative flex [&>*]:flex-shrink-0" vaul-drawer-wrapper="">
             <Homepage locations={locations} />
             {children}
             {parallel}
