@@ -1,8 +1,5 @@
-import { useRef } from 'react';
-
-import { useAtom, useAtomValue } from 'jotai';
+import { useAtomValue } from 'jotai';
 import { useRouter } from 'next/navigation';
-import { useEffectOnce } from 'usehooks-ts';
 
 import { appRoutingAtom } from '@/store/grid';
 
