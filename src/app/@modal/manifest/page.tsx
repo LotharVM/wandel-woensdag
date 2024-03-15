@@ -55,7 +55,11 @@ export default async function PageManifest({ params }: PageProps) {
 }
 
 export async function generateStaticParams() {
-  // const locations = await queryAllLocations();
-  // const params = locations.map(({ slug }) => ({ slug: slug.current }));
-  // return params;
+  return [];
+}
+
+export async function generateMetadata() {
+  return {
+    title: 'Manifest - Wandel Woensdag',
+  };
 }
