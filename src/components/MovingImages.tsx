@@ -8,6 +8,7 @@ const IMAGES = [
   'https://ca.slack-edge.com/T02D9S2HP-U02MEGPS4AG-bb44c34b4305-192',
   'https://ca.slack-edge.com/T02D9S2HP-U01J3RKLC12-615da7644956-192',
   'https://ca.slack-edge.com/T02D9S2HP-U05068ZTBKR-69d80ae1f353-192',
+  'https://ca.slack-edge.com/T02D9S2HP-U032YNU62KC-5769cd77b7ba-192',
   'https://ca.slack-edge.com/T02D9S2HP-UFD43R7V3-1c3e5e97a970-512',
 ];
 
